@@ -8,7 +8,7 @@
 # extend the most recent long term support Ubuntu version
 FROM ubuntu:14.04
 
-MAINTAINER Stephen L. Reed (http://texai.org, stephenreed@yahoo.com)
+MAINTAINER zgb (312768277@qq.com)
 
 # this is a non-interactive automated build - avoid some warning messages
 ENV DEBIAN_FRONTEND noninteractive
@@ -61,6 +61,7 @@ RUN update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 20000 &
 ADD http://mirrors.jenkins-ci.org/war/2.63/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
+RUN curl -sSL https://get.daocloud.io/docker | sh
 
 # configure the container to run jenkins, mapping container port 8080 to that host port
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
