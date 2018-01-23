@@ -1,4 +1,5 @@
-FROM gcr.io/google_containers/ubuntu-slim:0.6
+#FROM gcr.io/google_containers/ubuntu-slim:0.6
+FROM ubuntu:14.04
 MAINTAINER zgb <312768277@qq.com>
 # Ensure there are enough file descriptors for running Fluentd.
 RUN ulimit -n 65536
