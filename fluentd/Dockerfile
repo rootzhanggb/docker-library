@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 COPY td-agent.conf /etc/td-agent/td-agent.conf
 
 COPY build.sh /tmp/build.sh
-RUN /tmp/build.sh
+RUN chmod a+x /tmp/build.sh && /tmp/build.sh
 # set cst +8:00
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
