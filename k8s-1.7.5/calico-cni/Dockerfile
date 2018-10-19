@@ -1,2 +1,2 @@
-FROM gcr.io/projectcalico-org/cni:v1.11.2
+FROM quay.io/calico/cni:v1.9.1
 MAINTAINER zgb <312768277@qq.com>
